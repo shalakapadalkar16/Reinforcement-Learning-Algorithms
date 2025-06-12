@@ -192,51 +192,8 @@ H_{t+1}(a) = H_t(a) - α(R_t - R̄_t)π_t(a)  [for non-selected actions]
 ## 📁 File Structure
 ```
 01-multi-armed-bandits/
+├── main.ipynb
 ├── README.md
-├── epsilon_greedy.py          # ε-greedy implementation
-├── gradient_bandit.py         # Gradient bandit algorithm
-├── optimistic_initialization.py  # Initial value experiments
-├── bandit_environment.py      # Environment setup
-├── utils.py                   # Helper functions
-├── notebooks/
-│   ├── experiment_analysis.ipynb
-│   └── visualization.ipynb
 └── results/
-    ├── learning_rate_comparison.png
-    ├── exploration_analysis.png
-    ├── initialization_impact.png
-    └── gradient_vs_epsilon.png
+    └── results.docx
 ```
-
-## 🛠️ Usage
-
-```python
-from epsilon_greedy import EpsilonGreedyAgent
-from bandit_environment import TwoArmedBandit
-
-# Create environment
-env = TwoArmedBandit()
-
-# Initialize agent
-agent = EpsilonGreedyAgent(epsilon=0.2, alpha=lambda k: 1/(1 + np.log(1 + k)))
-
-# Run experiment
-rewards, q_values = run_experiment(env, agent, steps=1000, runs=100)
-```
-
-## 📚 Theoretical Background
-
-This implementation demonstrates fundamental concepts in reinforcement learning:
-- **Multi-armed bandit problem**
-- **Exploration vs exploitation dilemma**
-- **Value function approximation**
-- **Policy gradient methods**
-- **Sample complexity analysis**
-
-## 🎓 Educational Value
-
-Perfect for understanding:
-- How different learning rates affect convergence
-- The importance of balancing exploration and exploitation
-- Impact of initialization on learning dynamics
-- Comparison between value-based and policy-based methods
